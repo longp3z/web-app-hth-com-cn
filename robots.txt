@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://longp3z.github.io/web-app-hth-com-cn/sitemap.xml
