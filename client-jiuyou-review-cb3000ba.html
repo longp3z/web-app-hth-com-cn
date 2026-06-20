@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>jiuyou.com · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f3f3f5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #2c2c2e;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* Hero 杂志横幅 */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #e9e9ec;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1c1c1e;
+            margin-bottom: 0.6rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            font-weight: 350;
+            color: #7c7c80;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #555559;
+            max-width: 630px;
+            margin-top: 0.25rem;
+            border-left: 3px solid #b3b3b8;
+            padding-left: 1.2rem;
+            background: #f9f9fb;
+            border-radius: 0 12px 12px 0;
+            padding: 0.6rem 1rem 0.6rem 1.6rem;
+        }
+
+        /* 背景卡片 */
+        .bg-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e6e6ea;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.2rem;
+            transition: box-shadow 0.15s ease;
+        }
+
+        .bg-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .bg-card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1f1f21;
+            margin-bottom: 0.9rem;
+            letter-spacing: -0.01em;
+        }
+
+        .bg-card p {
+            margin-bottom: 0.8rem;
+            color: #38383b;
+        }
+
+        .bg-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bg-card .meta-tag {
+            display: inline-block;
+            background: #eaeef2;
+            color: #2e3b4e;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            margin-right: 0.5rem;
+            border: 1px solid #d5d9e0;
+        }
+
+        /* 三段式自然介绍 (类似杂志专题) */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-card {
+            flex: 1 1 280px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e3e3e7;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 1.6rem 1.6rem 1.6rem;
+            transition: transform 0.1s ease;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #202022;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid #e2e2e6;
+            padding-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #3d3d41;
+        }
+
+        .feature-card .icon-symbol {
+            display: inline-block;
+            font-size: 1.8rem;
+            line-height: 1;
+            opacity: 0.6;
+            margin-right: 0.2rem;
+        }
+
+        /* 场景/引述 卡片 */
+        .scene-block {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e6e6ea;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .scene-block p {
+            font-style: normal;
+            color: #3a3a3e;
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-block .quote-mark {
+            font-size: 2rem;
+            color: #b8b8c0;
+            line-height: 0.7;
+            vertical-align: middle;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            margin-top: 2.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #dcdce0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .footer-note .address-line {
+            color: #47474b;
+            font-size: 0.95rem;
+        }
+
+        .footer-note .address-line a {
+            color: #2c3e4e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #babcbe;
+            padding-bottom: 0.08rem;
+            transition: border-color 0.15s;
+        }
+
+        .footer-note .address-line a:hover {
+            border-bottom-color: #1d1d1f;
+            color: #1d1d1f;
+        }
+
+        .footer-note .hint {
+            font-size: 0.85rem;
+            color: #6c6c72;
+            background: #ebebef;
+            padding: 0.2rem 1rem;
+            border-radius: 100px;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e6e6ea;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            padding: 1.5rem 2rem 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-mini h3 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #1f1f21;
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-mini .qa-item {
+            margin-bottom: 0.6rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .faq-mini .qa-item .q {
+            font-weight: 500;
+            color: #303034;
+            min-width: 30px;
+        }
+
+        .faq-mini .qa-item .a {
+            color: #4a4a4f;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #d8d8dd;
+            margin: 0.6rem 0 1.2rem 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .bg-card {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .feature-card {
+                flex: 1 1 100%;
+            }
+
+            .scene-block {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .faq-mini {
+                padding: 1.2rem 1.2rem 1.4rem;
+            }
+
+            .footer-note {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .bg-card h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- hero 首页横幅 -->
+    <div class="hero">
+        <h1><span>稳定入口</span> · jiuyou.com</h1>
+        <div class="sub">基础配置与说明 · 杂志专题</div>
+    </div>
+
+    <!-- 背景说明 卡片 -->
+    <div class="bg-card">
+        <h2>▎关于这个站点</h2>
+        <p><span class="meta-tag">背景</span> 作为长久维护的线上标识，jiuyou.com 最初的设计思路是提供一致的访问锚点。与临时链接不同，这一地址保持长期可解析，避免因服务迁移或路径变更带来的不确定性。</p>
+        <p>从基础设施角度，稳定的域名解析相当于数字环境中的固定坐标。用户记录一个可靠入口，比每次重新查找更省力，也减少了因第三方聚合页面过时导致的无效跳转。</p>
+    </div>
+
+    <!-- 三段自然介绍 (卡片网格) -->
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3><span class="icon-symbol">⎔</span> 结构清晰</h3>
+            <p>页面层级经过梳理，主要功能区块均基于通用目录设计。无论后续调整或补充内容，原有路径基本保留，降低长期维护的理解成本。</p>
+        </div>
+        <div class="feature-card">
+            <h3><span class="icon-symbol">⌲</span> 低依赖呈现</h3>
+            <p>核心页面不依赖外部脚本或第三方字体库。在基础网络环境下即可完成加载，减少因外部资源失效导致的显示异常，提升可用性。</p>
+        </div>
+        <div class="feature-card">
+            <h3><span class="icon-symbol">⌗</span> 说明导向</h3>
+            <p>每个区块围绕“它是什么”而不是“它有什么好处”来组织。以客观说明为主，帮助浏览者快速理解用途，避免过度承诺或模糊表述。</p>
+        </div>
+    </div>
+
+    <!-- 场景/ 引述 + 进一步说明 (杂志式混排) -->
+    <div class="scene-block">
+        <p><span class="quote-mark">“</span> 对于一个需要长期被收藏或记录的地址，稳定性是优先考虑的因素。jiuyou.com 在设计时以持续可访问为前提，不将入口绑定于临时活动或短期推广。</p>
+        <p>实际使用场景包括：内部文档中作为固定参考链接，或对外资料中标示主要访问渠道。它不追求花哨的引导，而是提供一份简洁的说明页，让访客自行判断下一步操作。</p>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #616166;">—— 杂志专题 · 入口说明</p>
+    </div>
+
+    <!-- FAQ 摘要卡片 (内容自然) -->
+    <div class="faq-mini">
+        <h3>▎常见理解 · 摘要</h3>
+        <div class="qa-item">
+            <span class="q">Q:</span>
+            <span class="a">这个页面是否包含第三方链接？</span>
+        </div>
+        <div class="qa-item">
+            <span class="q">A:</span>
+            <span class="a">除了指向 <a href="https://client-jiuyou.com" style="color: #2c3e4e; text-decoration: underline; text-underline-offset: 2px; text-decoration-color: #b0b2b6;">jiuyou.com</a> 本身的链接之外，没有其他外部跳转。所有内容均在该域名说明范围内。</span>
+        </div>
+        <hr>
+        <div class="qa-item">
+            <span class="q">Q:</span>
+            <span class="a">页面是否会频繁改动？</span>
+        </div>
+        <div class="qa-item">
+            <span class="q">A:</span>
+            <span class="a">介绍性内容在确认后较少调整，但会随服务说明的更新做必要补充。核心链接保持不变。</span>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <div class="address-line">
+            主要地址：<a href="https://client-jiuyou.com">jiuyou.com</a> · 作为稳定入口长期存在
+        </div>
+        <div class="hint">
+            ⚡ 页面说明版 2025
+        </div>
+    </div>
+</div>
+</body>
+</html>
