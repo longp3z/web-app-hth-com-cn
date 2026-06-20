@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2">
+  <title>问鼎娱乐 · 简明访问引导</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f4f0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      color: #2e2a26;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fefcf9;
+      border-radius: 24px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.02);
+      padding: 2rem 2.2rem 2.8rem;
+    }
+
+    /* 顶部导航 */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid #e8e1d8;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-logo {
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #4c3f33;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: #6b5d4f;
+      text-decoration: none;
+      padding: 0.2rem 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2e2a26;
+      border-bottom-color: #b3a292;
+    }
+
+    /* hero 区 */
+    .hero {
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      color: #2c241d;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #645a50;
+      max-width: 90%;
+      border-left: 4px solid #d6c9bc;
+      padding-left: 1rem;
+      font-style: normal;
+    }
+
+    /* 通用区块 */
+    section {
+      margin-bottom: 2.8rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #3a322a;
+      margin-bottom: 1rem;
+      border-bottom: 1px dashed #ddd5cb;
+      padding-bottom: 0.3rem;
+    }
+
+    .section-title small {
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: #8f8276;
+      margin-left: 0.6rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    p a {
+      color: #6f5c4a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 0.5px;
+      text-decoration-color: #c9b9aa;
+      transition: color 0.15s;
+    }
+
+    p a:hover {
+      color: #3d3026;
+      text-decoration-color: #7f6b59;
+    }
+
+    /* 三个场景卡片 */
+    .scenes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.3rem;
+    }
+
+    .scene-card {
+      background: #faf7f2;
+      border: 1px solid #ece4da;
+      border-radius: 16px;
+      padding: 1.3rem 1.2rem 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+    }
+
+    .scene-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #3c332b;
+      margin-bottom: 0.5rem;
+    }
+
+    .scene-card p {
+      font-size: 0.94rem;
+      color: #5e5449;
+      margin-bottom: 0;
+    }
+
+    /* 提示 / 引用块 */
+    .notice-box {
+      background: #f4efe9;
+      border-left: 5px solid #bbaa9a;
+      padding: 1.2rem 1.4rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.6rem 0 2rem;
+    }
+
+    .notice-box p {
+      margin-bottom: 0.3rem;
+    }
+
+    .notice-box strong {
+      font-weight: 500;
+      color: #3d3229;
+    }
+
+    .faq-summary {
+      list-style: none;
+      margin-top: 0.2rem;
+    }
+
+    .faq-summary li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #efe8e0;
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .faq-summary li:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #3f362e;
+      min-width: 5em;
+    }
+
+    .faq-a {
+      color: #62574b;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3dbd1;
+      margin: 1.8rem 0;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #9b8f82;
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eae2d8;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      .page {
+        padding: 1.5rem 1rem;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .hero .sub {
+        max-width: 100%;
+      }
+      .scenes {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 导航 -->
+  <nav class="nav">
+    <span class="nav-logo">⌘ 简明指南</span>
+    <div class="nav-links">
+      <a href="#guide">指引</a>
+      <a href="#scenes">场景</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>问鼎娱乐 · 访问说明</h1>
+    <div class="sub">从域名到页面，一点基础准备，一篇轻量指引。</div>
+  </div>
+
+  <!-- 介绍：简明指南 -->
+  <section id="guide">
+    <div class="section-title">关于这个站点 <small>简要说明</small></div>
+    <p>
+      你正在读的，是围绕 <a href="https://webs-wd.com">问鼎娱乐</a> 整理的一段导航式介绍。
+      没有复杂的入门手册，也没有冗长的功能清单——这里只聚焦三件事：<strong>了解平台、找到入口、留意日常访问中的小细节</strong>。
+    </p>
+    <p>
+      如果你只是偶尔使用，或者第一次听说，不妨把下面几段当作一张便签：它不会告诉你每一步怎么做，但能让你对“从哪里开始”有个大概方向。
+    </p>
+  </section>
+
+  <!-- 三个场景模块 -->
+  <section id="scenes">
+    <div class="section-title">三个常见情景 <small>场景化备忘</small></div>
+    <div class="scenes">
+      <div class="scene-card">
+        <h3>📱 移动端访问</h3>
+        <p>手机浏览器直接输入域名即可。建议保持系统与浏览器为较新版本，部分旧内核可能出现排版偏移。</p>
+      </div>
+      <div class="scene-card">
+        <h3>🖥️ 桌面端浏览</h3>
+        <p>PC 上访问时，窗口宽度 1024px 以上体验较完整。书签或直接输入地址都可以，不需要额外插件。</p>
+      </div>
+      <div class="scene-card">
+        <h3>🔁 链接与跳转</h3>
+        <p>站内指向 <a href="https://webs-wd.com">问鼎娱乐</a> 的链接均采用常规 HTTP 直链，无中间页。如遇跳转提示，可先检查本地网络环境。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 提示 / 引用块 -->
+  <div class="notice-box">
+    <p><strong>👀 访问提醒</strong></p>
+    <p>部分网络环境下，境外域名可能存在解析延迟。如果页面加载缓慢，建议尝试切换 DNS 或稍后重试。平台本身不要求注册或安装任何额外程序即可浏览公开内容。</p>
+  </div>
+
+  <!-- 常见说明 (FAQ 摘要) -->
+  <section id="faq">
+    <div class="section-title">常见说明 <small>简短问答</small></div>
+    <ul class="faq-summary">
+      <li>
+        <span class="faq-q">需要注册吗？</span>
+        <span class="faq-a">公开页面无需登录。部分功能可能涉及身份验证，以实际页面提示为准。</span>
+      </li>
+      <li>
+        <span class="faq-q">页面打不开？</span>
+        <span class="faq-a">先确认网络连通性，再检查域名拼写。可尝试用其他设备或浏览器访问排障。</span>
+      </li>
+      <li>
+        <span class="faq-q">移动端适配？</span>
+        <span class="faq-a">页面采用响应式设计，手机竖屏浏览时内容会自动重排。横屏与平板也做了基本适配。</span>
+      </li>
+      <li>
+        <span class="faq-q">信息更新频率？</span>
+        <span class="faq-a">此页为静态说明，内容不定期修订。具体服务状态以 <a href="https://webs-wd.com">问鼎娱乐</a> 实时页面为准。</span>
+      </li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <div class="footer-note">
+    本文档仅提供访问引导与情景说明 · 无诱导或承诺，请自主判断
+  </div>
+</div>
+</body>
+</html>
